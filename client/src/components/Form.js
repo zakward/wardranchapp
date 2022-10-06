@@ -7,7 +7,6 @@ function Form(props) {
         title: "",
         priority: "",
         isComplete: false,
-        priority: ""
     })
 
 

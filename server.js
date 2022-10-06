@@ -5,7 +5,7 @@ const morgan = require("morgan")
 require("dotenv").config()
 const {expressjwt} = require("express-jwt")
 uri = process.env.MONGODB_URI
-const PORT = process.env.PORT || 9000
+const PORT = process.env.PORT || 3000
 
 var options = {
     dotfiles: 'ignore',

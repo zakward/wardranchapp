@@ -29,9 +29,9 @@ app.use(morgan("dev"))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
 
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// app.get("*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 
 // connect to
@@ -41,16 +41,14 @@ mongoose.connect(
     (err) => {
         if (err) throw err
         console.log("Connected to the DataBase")
-        app.listen(PORT, () => {
-            console.log(`The Server is running on Port ${PORT}`)
         })
-    }
+
     
+app.listen(PORT, () => {
+    console.log(`The Server is running on Port ${PORT}`)
+
+} 
 )
-    
-
-
-
 
 //routes
 

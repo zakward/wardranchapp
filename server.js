@@ -2,25 +2,37 @@ const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
 const morgan = require("morgan")
+const path = require('path');
 require("dotenv").config()
 const {expressjwt} = require("express-jwt")
 uri = process.env.MONGODB_URI
 const PORT = process.env.PORT || 3000
 
-var options = {
-    dotfiles: 'ignore',
-    etag: false,
-    extensions: ['htm', 'html','css','js','ico','jpg','jpeg','png','svg'],
-    index: ['index.html'],
-    maxAge: '1m',
-    redirect: false
-  }
+// var options = {
+//     dotfiles: 'ignore',
+//     etag: false,
+//     extensions: ['htm', 'html','css','js','ico','jpg','jpeg','png','svg'],
+//     index: ['index.html'],
+//     maxAge: '1m',
+//     redirect: false
+//   }
+
+
 
 //middleware
 
 app.use(express.json())
 app.use(morgan("dev"))
-app.use(express.static('build', options))
+// app.use(express.static('build', options))
+
+//static files
+app.use(express.static(path.join(__dirname, "client", "build")))
+
+
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
 
 // connect to
 

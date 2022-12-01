@@ -6,16 +6,28 @@ import {BrowserRouter as Router} from "react-router-dom"
 import UserProvider from './components/UserContext';
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <Router>
+ReactDOM.render(
+    <React.StrictMode>
+       <Router>
         <UserProvider>
             <App />
         </UserProvider>
-    </Router>
+    </Router> 
+    </React.StrictMode>,
+    document.getElementById("root")
+)
     
+    
+    // ReactDOM.render(
+    //     <React.StrictMode>
+    //       <BrowserRouter>
+    //             <App />
+    //       </BrowserRouter>
+    //     </React.StrictMode>,
+    //     document.getElementById("root")
+    //   );
 
-);
+;
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -6,15 +6,17 @@ import {BrowserRouter as Router} from "react-router-dom"
 import UserProvider from './components/UserContext';
 
 
-ReactDOM.render(
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(
     <React.StrictMode>
        <Router>
         <UserProvider>
             <App />
         </UserProvider>
     </Router> 
-    </React.StrictMode>,
-    document.getElementById("root")
+    </React.StrictMode>
 )
     
     

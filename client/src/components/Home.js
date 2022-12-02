@@ -23,9 +23,9 @@ function Home() {
     return (
         <div className = "home-container">
             <div className = "main-header">
-                <h3 id = "title" >Our Adventure App</h3>
+                {/* <h3 id = "title" >Our Adventure App</h3> */}
             </div>
-            <h3 className = "welcome-msg">Welcome {loggedIn ? username : "familia"}!</h3>
+            <h3 className = "welcome-msg">Welcome {loggedIn ? username.toUpperCase(): "family!"}!</h3>
             {toggleForm ? <AuthForm newLogin = {newLogin}  /> : <></>}
         </div>
     )

@@ -216,7 +216,6 @@
   background-position: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .task-header {
@@ -1086,11 +1085,12 @@ input[type="checkbox"]:checked {
 }
 
 .welcome-msg{
-  position: relative;
   color: #870000;
   font-weight: 700;
-  font-size: 26px;
-  top: 25px;
+  font-size: 36px;
+  position: relative;
+  top: 15px;
+  left: 20px;
 }
 
 .noUser {
